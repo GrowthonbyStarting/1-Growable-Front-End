@@ -1,0 +1,50 @@
+.about {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(247, 248, 250);
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 750px;
+    height: 550px;
+    // background-color: yellow;
+  }
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 22%;
+  }
+
+  &__teamlist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 20%;
+  }
+
+  &__benefits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 55%;
+    justify-content: space-evenly;
+  }
+
+  &__desc-text {
+    font-size: 2.7rem;
+    font-weight: bold;
+  }
+
+  &__teamlist-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+}

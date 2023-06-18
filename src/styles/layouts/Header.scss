@@ -1,0 +1,25 @@
+.header {
+  $padding: 20%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding-right: $padding;
+  padding-left: $padding;
+  background-color: white;
+
+  &__title {
+    font-size: 1.2rem;
+  }
+
+  &__options {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+  }
+
+  &__option-text {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,14 @@
+.about-benefits {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 53px;
+  border-radius: 10px;
+  border: 1.5px solid rgb(195, 195, 195);
+
+  &__description {
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+}
