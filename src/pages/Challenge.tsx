@@ -1,7 +1,21 @@
 import React, { ReactElement } from "react";
+import ChallengeList from "../molecules/ChallengeList";
 
 const Challenge = (): ReactElement => {
-  return <div className="challenge">challenge</div>;
+  return (
+    <div className="challenge">
+      <div className="challenge__content">
+        <ChallengeList />
+        <ChallengeList />
+        <ChallengeList />
+        <ChallengeList />
+        <ChallengeList />
+        <ChallengeList />
+        <ChallengeList />
+        <ChallengeList />
+      </div>
+    </div>
+  );
 };
 
 export default Challenge;

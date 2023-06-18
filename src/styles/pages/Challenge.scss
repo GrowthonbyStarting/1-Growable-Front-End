@@ -1,5 +1,17 @@
 .challenge {
   display: flex;
   flex: 1;
+  justify-content: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  overflow-y: scroll;
   background-color: rgb(247, 248, 250);
+
+  &__content {
+    display: flex;
+    justify-content: space-evenly;
+    width: 1400px;
+    height: 1000px;
+    flex-wrap: wrap;
+  }
 }

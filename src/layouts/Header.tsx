@@ -1,6 +1,6 @@
-import React from "react";
+import React, { ReactElement } from "react";
 
-const Header = () => {
+const Header = (): ReactElement => {
   return (
     <div className="header">
       <span className="header__title">Starting</span>
