@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import ChallengeList from "../styles/components/ChallengeList";
+import ChallengeList from "../components/ChallengeList";
 
 const Challenge = (): ReactElement => {
   return (
