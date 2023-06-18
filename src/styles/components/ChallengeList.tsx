@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
-import BtnJoinChallenge from "./buttons/BtnJoinChallenge";
-import BtnChallengeKeyword from "./buttons/BtnChallengeKeyword";
-import BtnChallengeHeartIcon from "./buttons/BtnChallengeHeartIcon";
+import BtnJoinChallenge from "../../molecules/buttons/BtnJoinChallenge";
+import BtnChallengeKeyword from "../../molecules/buttons/BtnChallengeKeyword";
+import BtnChallengeHeartIcon from "../../molecules/buttons/BtnChallengeHeartIcon";
 import { FaRegCommentAlt } from "react-icons/fa";
 
 const ChallengeList = (): ReactElement => {
