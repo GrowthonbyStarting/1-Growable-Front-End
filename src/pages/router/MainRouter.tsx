@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "../App";
 import Challenge from "../Challenge";
 import About from "../About";
+import KakaoRedirect from "../KakaoRedirect";
 
 const MainRouter = (): ReactElement => {
   return (
@@ -12,6 +13,7 @@ const MainRouter = (): ReactElement => {
           <Route path="about" element={<About />} />
           <Route path="challenge" element={<Challenge />} />
         </Route>
+        <Route path="/oauth2/code/kakao" element={<KakaoRedirect />} />
       </Routes>
     </BrowserRouter>
   );

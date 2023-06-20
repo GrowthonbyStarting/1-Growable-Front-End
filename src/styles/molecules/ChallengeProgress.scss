@@ -1,0 +1,28 @@
+.about-benefits {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 310px;
+  height: 310px;
+  border-radius: 40px;
+  background-color: rgb(217, 217, 217);
+
+  & > span {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    & > span {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+  }
+}

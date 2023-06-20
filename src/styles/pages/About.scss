@@ -1,49 +1,74 @@
 .about {
   display: flex;
+  flex-direction: column;
   flex: 1;
-  align-items: center;
-  justify-content: center;
   background-color: rgb(247, 248, 250);
 
-  &__content {
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    background-color: rgb(179, 179, 179);
+  }
+
+  &__top-content {
+    display: flex;
+    flex-direction: column;
+    width: 750px;
+    height: 300px;
+    padding-top: 100px;
+  }
+
+  &__bottom-content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 750px;
-    height: 550px;
+    width: 1800px;
+    height: 370px;
+
+    & > span {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-left: 75px;
+    }
   }
 
   &__desc {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 45%;
     justify-content: space-evenly;
-    height: 22%;
+
+    & > span {
+      font-size: 3.2rem;
+      font-weight: bold;
+    }
   }
 
   &__teamlist {
     display: flex;
     flex-direction: column;
+    flex: 1;
     align-items: center;
     justify-content: space-evenly;
-    height: 20%;
+
+    & > span {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
   }
 
-  &__benefits {
+  &__challenge-progress {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 55%;
     justify-content: space-evenly;
-  }
-
-  &__desc-text {
-    font-size: 2.7rem;
-    font-weight: bold;
-  }
-
-  &__teamlist-text {
-    font-size: 1.1rem;
-    font-weight: 600;
   }
 }

@@ -16,10 +16,16 @@
   &__options {
     display: flex;
     justify-content: space-between;
-    width: 150px;
+    width: 200px;
   }
 
   &__option-text {
     font-size: 0.9rem;
+    cursor: pointer;
+
+    &--login {
+      text-decoration: none;
+      color: inherit;
+    }
   }
 }
