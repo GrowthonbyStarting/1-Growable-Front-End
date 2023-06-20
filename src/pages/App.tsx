@@ -1,8 +1,14 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useEffect } from "react";
+import { NavigateFunction, Outlet, useNavigate } from "react-router-dom";
 import Header from "../layouts/Header";
-import { Outlet } from "react-router-dom";
 
 const App = (): ReactElement => {
+  const navigate: NavigateFunction = useNavigate();
+
+  useEffect(() => {
+    navigate("/about");
+  }, []);
+
   return (
     <div className="app">
       <Header />
