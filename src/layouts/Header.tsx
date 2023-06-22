@@ -9,9 +9,11 @@ const Header = (): ReactElement => {
       <div className="header__options">
         <span className="header__option-text">About</span>
         <span className="header__option-text">Challenge</span>
-        <Link className="header__option-text header__option-text--login" to={kakaoOAuth2RequestURL}>
+        {/* <Link className="header__option-text header__option-text--login" to={kakaoOAuth2RequestURL}>
           login
-        </Link>
+        </Link> */}
+        <span className="header__option-text">내 이력서</span>
+        <span className="header__option-text">마이 페이지</span>
       </div>
     </div>
   );

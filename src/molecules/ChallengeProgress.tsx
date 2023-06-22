@@ -9,10 +9,10 @@ interface Props {
 
 const ChallengeProgress = ({ icon: Icon, title, description }: Props): ReactElement => {
   return (
-    <div className="about-benefits">
-      <Icon size={50} />
+    <div className="challenge-progress">
+      <Icon style={{ color: "white" }} size={50} />
       <span>{title}</span>
-      <div className="about-benefits__description">
+      <div className="challenge-progress__description">
         {description.split("\\n").map((line, idx) => {
           return <span key={idx}>{line}</span>;
         })}

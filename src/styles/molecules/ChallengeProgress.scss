@@ -1,4 +1,4 @@
-.about-benefits {
+.challenge-progress {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,11 +6,13 @@
   width: 310px;
   height: 310px;
   border-radius: 40px;
-  background-color: rgb(217, 217, 217);
+  background-color: black;
+  border: 2px solid rgb(153, 153, 153);
 
   & > span {
     font-size: 1.4rem;
     font-weight: bold;
+    color: white;
   }
 
   &__description {
@@ -23,6 +25,7 @@
       font-size: 1rem;
       font-weight: 500;
       margin-bottom: 5px;
+      color: white;
     }
   }
 }

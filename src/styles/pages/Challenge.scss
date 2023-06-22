@@ -1,17 +1,44 @@
 .challenge {
   display: flex;
+  flex-direction: column;
   flex: 1;
   justify-content: center;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  overflow-y: scroll;
+  align-items: center;
+  padding-top: 3%;
   background-color: rgb(247, 248, 250);
 
-  &__content {
+  &__options {
     display: flex;
-    justify-content: space-evenly;
-    width: 1400px;
-    height: 1000px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 1470px;
+    height: 100px;
+  }
+
+  &__lists {
+    display: grid;
+    grid-template-columns: repeat(4, 350px);
+    grid-gap: 40px;
+    overflow-y: auto;
+
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  &__title {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 360px;
+
+    & > span:first-child {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    & > span {
+      font-size: 0.8rem;
+    }
   }
 }

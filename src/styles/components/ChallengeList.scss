@@ -1,8 +1,8 @@
 .challenge-list {
   display: flex;
   flex-direction: column;
-  width: 300px;
-  height: 400px;
+  width: 350px;
+  height: 450px;
   border-radius: 10px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 
@@ -67,12 +67,12 @@
     position: absolute;
     align-items: center;
     justify-content: center;
-    top: 110px;
-    right: 90px;
+    top: 120px;
+    right: 115px;
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background-color: rgb(217, 217, 217);
+    background-color: rgb(239, 247, 254);
   }
 
   &__hr {

@@ -1,8 +1,8 @@
 import React, { ReactElement } from "react";
-import BtnJoinChallenge from "../molecules/buttons/BtnJoinChallenge";
 import BtnChallengeKeyword from "../molecules/buttons/BtnChallengeKeyword";
 import BtnChallengeHeartIcon from "../molecules/buttons/BtnChallengeHeartIcon";
 import { FaRegCommentAlt } from "react-icons/fa";
+import BtnChallengeDetail from "../molecules/buttons/BtnChallengeDetail";
 
 const ChallengeList = (): ReactElement => {
   return (
@@ -12,7 +12,7 @@ const ChallengeList = (): ReactElement => {
           <BtnChallengeHeartIcon />
         </div>
         <div className="challenge-list__message-icon-box">
-          <FaRegCommentAlt />
+          <FaRegCommentAlt color="rgb(81, 132, 236)" />
         </div>
         <div className="challenge-list__picture"></div>
         <span className="challenge-list__mentor-name-text">멘토 이름</span>
@@ -29,7 +29,7 @@ const ChallengeList = (): ReactElement => {
           <BtnChallengeKeyword keyword="#키워드" />
           <BtnChallengeKeyword keyword="#키워드" />
         </div>
-        <BtnJoinChallenge />
+        <BtnChallengeDetail />
       </div>
     </div>
   );

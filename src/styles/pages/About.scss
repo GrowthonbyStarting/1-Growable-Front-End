@@ -2,12 +2,15 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  background-color: rgb(247, 248, 250);
 
   &__top {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    background-image: url("../../../public/about.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: rgba(0, 0, 0, 0.4);
     height: 50%;
   }
 
@@ -16,7 +19,7 @@
     align-items: center;
     justify-content: center;
     flex: 1;
-    background-color: rgb(179, 179, 179);
+    background-color: black;
   }
 
   &__top-content {
@@ -33,12 +36,24 @@
     justify-content: space-between;
     width: 1800px;
     height: 370px;
+    z-index: 9;
 
     & > span {
       font-size: 1.4rem;
       font-weight: bold;
       margin-left: 75px;
+      color: white;
     }
+  }
+
+  &__mask {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(to bottom, transparent 60%, rgb(0, 0, 0));
   }
 
   &__desc {
@@ -51,6 +66,7 @@
     & > span {
       font-size: 3.2rem;
       font-weight: bold;
+      color: white;
     }
   }
 
@@ -64,6 +80,7 @@
     & > span {
       font-size: 1.3rem;
       font-weight: 600;
+      color: white;
     }
   }
 

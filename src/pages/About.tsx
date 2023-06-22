@@ -1,20 +1,22 @@
 import React, { ReactElement } from "react";
 import BtnGotoTeamlist from "../molecules/buttons/BtnGotoTeamlist";
-import ChallengeProgress from "../molecules/ChallengeProgress.tsx";
+import ChallengeProgress from "../molecules/ChallengeProgress";
 import { FaUsers, FaRegHandshake, FaCheck, FaMedal, FaUserTie } from "react-icons/fa";
 
 const About = (): ReactElement => {
   return (
     <div className="about">
       <div className="about__top">
-        <div className="about__top-content">
-          <div className="about__desc">
-            <span>팀으로 함께 성장하는</span>
-            <span>스타팅 취업 챌린지</span>
-          </div>
-          <div className="about__teamlist">
-            <span>챌린지 성공시, 리워드 지급!</span>
-            <BtnGotoTeamlist />
+        <div className="about__mask">
+          <div className="about__top-content">
+            <div className="about__desc">
+              <span>팀으로 함께 성장하는</span>
+              <span>스타팅 취업 챌린지</span>
+            </div>
+            <div className="about__teamlist">
+              <span>챌린지 성공시, 리워드 지급!</span>
+              <BtnGotoTeamlist />
+            </div>
           </div>
         </div>
       </div>

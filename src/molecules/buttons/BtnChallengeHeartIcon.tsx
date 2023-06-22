@@ -8,7 +8,7 @@ const BtnChallengeHeartIcon = (): ReactElement => {
     setHeartToggle(!heartToggle);
   };
 
-  return heartToggle ? <FaHeart style={{ color: "red" }} onClick={onClickHeartIcon} /> : <FaRegHeart style={{ color: "rgb(109, 78, 194)" }} onClick={onClickHeartIcon} />;
+  return heartToggle ? <FaHeart size={20} color="red" onClick={onClickHeartIcon} /> : <FaRegHeart size={20} color="rgb(81, 132, 236)" onClick={onClickHeartIcon} />;
 };
 
 export default BtnChallengeHeartIcon;
