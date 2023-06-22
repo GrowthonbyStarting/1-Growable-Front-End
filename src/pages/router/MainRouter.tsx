@@ -4,6 +4,7 @@ import App from "../App";
 import Challenge from "../Challenge";
 import About from "../About";
 import KakaoRedirect from "../KakaoRedirect";
+import Login from "../Login";
 
 const MainRouter = (): ReactElement => {
   return (
@@ -12,6 +13,7 @@ const MainRouter = (): ReactElement => {
         <Route path="/" element={<App />}>
           <Route path="about" element={<About />} />
           <Route path="challenge" element={<Challenge />} />
+          <Route path="login" element={<Login />} />
         </Route>
         <Route path="/oauth2/code/kakao" element={<KakaoRedirect />} />
       </Routes>
