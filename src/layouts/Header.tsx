@@ -3,10 +3,6 @@ import { useSelector } from "react-redux";
 import { RootState } from "../stores/RootReducer";
 import { useNavigate } from "react-router-dom";
 
-interface Props {
-  route: string;
-}
-
 const Header = (): ReactElement => {
   const isLoggedIn: boolean = useSelector((state: RootState) => state.user.isLoggedIn);
 
@@ -35,7 +31,8 @@ const Header = (): ReactElement => {
 
   const navigateToMyPage = (): void => {
     // navigateToLogin();
-    navigate("/mentor-info");
+    // navigate("/mentor-info");
+    navigate("/payment");
     // 페이지 구현
   };
 

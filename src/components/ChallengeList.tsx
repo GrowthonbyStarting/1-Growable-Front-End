@@ -2,7 +2,7 @@ import React, { ReactElement } from "react";
 import BtnChallengeKeyword from "../molecules/buttons/BtnChallengeKeyword";
 import BtnChallengeHeartIcon from "../molecules/buttons/BtnChallengeHeartIcon";
 import { FaRegCommentAlt } from "react-icons/fa";
-import BtnChallengeDetail from "../molecules/buttons/BtnChallengeDetail";
+import BtnSubmit from "../molecules/buttons/BtnSubmit";
 
 const ChallengeList = (): ReactElement => {
   return (
@@ -29,7 +29,7 @@ const ChallengeList = (): ReactElement => {
           <BtnChallengeKeyword keyword="#키워드" />
           <BtnChallengeKeyword keyword="#키워드" />
         </div>
-        <BtnChallengeDetail />
+        <BtnSubmit />
       </div>
     </div>
   );

@@ -14,8 +14,13 @@
   }
 }
 
+.common-background {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
 .common-form {
-  padding: 65px;
   border-radius: 14px;
   box-sizing: border-box;
   box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);

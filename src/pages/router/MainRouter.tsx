@@ -7,6 +7,7 @@ import KakaoRedirect from "../KakaoRedirect";
 import Login from "../Login";
 import MentorInfo from "../MentorInfo";
 import MenteeInfo from "../MenteeInfo";
+import Payment from "../Payment";
 
 const MainRouter = (): ReactElement => {
   return (
@@ -18,6 +19,7 @@ const MainRouter = (): ReactElement => {
           <Route path="login" element={<Login />} />
           <Route path="mentor-info" element={<MentorInfo />} />
           <Route path="mentee-info" element={<MenteeInfo />} />
+          <Route path="payment" element={<Payment />} />
         </Route>
         <Route path="/oauth2/code/kakao" element={<KakaoRedirect />} />
       </Routes>

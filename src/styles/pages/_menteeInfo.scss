@@ -1,17 +1,6 @@
 .mentee-info {
-  display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(247, 248, 250);
-
-  &__container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 1000px;
-    height: 800px;
-  }
+  background-color: $whitegrey;
+  padding-top: 60px;
 
   &__resume {
     display: flex;

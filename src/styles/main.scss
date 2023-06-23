@@ -1,22 +1,25 @@
 @import "reset.scss";
 @import "common.scss";
+@import "variables.scss";
 
-@import "components/ChallengeList.scss";
-@import "components/DefaultInfoForm.scss";
+@import "components/challengeList.scss";
+@import "components/defaultInfoForm.scss";
 
-@import "molecules/ChallengeProgress.scss";
-@import "molecules/buttons/BtnChallengeCategory.scss";
-@import "molecules/buttons/BtnGotoTeamlist.scss";
-@import "molecules/buttons/BtnChallengeDetail.scss";
-@import "molecules/buttons/BtnChallengeKeyword.scss";
-@import "molecules/buttons/BtnKakaoLogin.scss";
-@import "molecules/inputs/InputUserInfo.scss";
+@import "molecules/challengeProgress.scss";
+@import "molecules/buttons/btnChallengeCategory.scss";
+@import "molecules/buttons/btnGotoTeamlist.scss";
+@import "molecules/buttons/btnSubmit.scss";
+@import "molecules/buttons/btnChallengeKeyword.scss";
+@import "molecules/buttons/btnKakaoLogin.scss";
+@import "molecules/inputs/inputUserInfo.scss";
 
-@import "layouts/Header.scss";
+@import "layouts/header.scss";
+@import "layouts/container.scss";
 
-@import "pages/App.scss";
-@import "pages/About.scss";
-@import "pages/Challenge.scss";
-@import "pages/Login.scss";
-@import "pages/MenteeInfo.scss";
-@import "pages/MentorInfo.scss";
+@import "pages/app.scss";
+@import "pages/about.scss";
+@import "pages/challenge.scss";
+@import "pages/login.scss";
+@import "pages/menteeInfo.scss";
+@import "pages/mentorInfo.scss";
+@import "pages/payment.scss";
