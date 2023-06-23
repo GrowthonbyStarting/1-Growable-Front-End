@@ -1,0 +1,58 @@
+.mentee-info {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(247, 248, 250);
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1000px;
+    height: 800px;
+  }
+
+  &__resume {
+    display: flex;
+    align-items: center;
+  }
+
+  &__basic-info {
+    display: flex;
+    flex: 1;
+  }
+
+  &__left {
+    width: 150px;
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: 160px;
+      margin-top: 80px;
+
+      & > span {
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    justify-content: space-evenly;
+  }
+
+  &__picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: grey;
+  }
+}

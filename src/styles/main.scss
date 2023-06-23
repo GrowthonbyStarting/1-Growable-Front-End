@@ -1,6 +1,8 @@
 @import "reset.scss";
+@import "common.scss";
 
 @import "components/ChallengeList.scss";
+@import "components/DefaultInfoForm.scss";
 
 @import "molecules/ChallengeProgress.scss";
 @import "molecules/buttons/BtnChallengeCategory.scss";
@@ -8,6 +10,7 @@
 @import "molecules/buttons/BtnChallengeDetail.scss";
 @import "molecules/buttons/BtnChallengeKeyword.scss";
 @import "molecules/buttons/BtnKakaoLogin.scss";
+@import "molecules/inputs/InputUserInfo.scss";
 
 @import "layouts/Header.scss";
 
@@ -15,3 +18,5 @@
 @import "pages/About.scss";
 @import "pages/Challenge.scss";
 @import "pages/Login.scss";
+@import "pages/MenteeInfo.scss";
+@import "pages/MentorInfo.scss";

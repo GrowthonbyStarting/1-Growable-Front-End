@@ -1,0 +1,16 @@
+.input-user-info {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    margin-bottom: 10px;
+
+    & > span {
+      font-size: 0.8rem;
+    }
+
+    & > span:last-child {
+      color: blue;
+    }
+  }
+}

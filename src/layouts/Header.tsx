@@ -23,19 +23,19 @@ const Header = (): ReactElement => {
   };
 
   const navigateToChallenge = (): void => {
-    // navigateToLogin();
-    navigate("/challenge");
+    navigateToLogin();
+    // navigate("/challenge");
   };
 
   const navigateToResume = (): void => {
-    navigateToLogin();
-
+    // navigateToLogin();
+    navigate("/mentee-info");
     // 페이지 구현
   };
 
   const navigateToMyPage = (): void => {
-    navigateToLogin();
-
+    // navigateToLogin();
+    navigate("/mentor-info");
     // 페이지 구현
   };
 

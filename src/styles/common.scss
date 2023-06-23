@@ -1,0 +1,31 @@
+.common-input {
+  height: 40px;
+  border: none;
+  border: 1px solid rgb(238, 240, 243);
+  border-radius: 10px;
+  text-indent: 15px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: rgb(194, 197, 202);
+  }
+}
+
+.common-form {
+  padding: 65px;
+  border-radius: 14px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.invisible-scroll {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

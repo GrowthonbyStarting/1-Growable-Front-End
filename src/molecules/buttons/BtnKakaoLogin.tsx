@@ -1,9 +1,11 @@
 import React, { ReactElement } from "react";
 import { RiKakaoTalkFill } from "react-icons/ri";
+import { fetchKakaoAPIKey } from "../../apis/UserApi";
 
 const BtnKakaoLogin = (): ReactElement => {
-  const onClick = (): void => {
-    window.location.href = "http://13.209.18.185:8080/api/kakao-login";
+  const onClick = async (): Promise<void> => {
+    // window.location.href = kakaoOAuth2RequestURL;
+    await fetchKakaoAPIKey();
   };
 
   return (

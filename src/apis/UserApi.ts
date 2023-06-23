@@ -9,3 +9,8 @@ export const fetchToken = createAsyncThunk("/auth", async (code: string): Promis
 
   return result;
 });
+
+export const fetchKakaoAPIKey = async () => {
+  const response: AxiosResponse = await axios.get(`${process.env.REACT_APP_SERVER_PATH}/api/send-key`);
+  console.log(response);
+};

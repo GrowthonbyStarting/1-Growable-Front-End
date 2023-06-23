@@ -1,0 +1,17 @@
+.default-info-form {
+  display: flex;
+  flex-direction: column;
+  padding: 65px;
+
+  &__header {
+    & > span {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex: 1;
+  }
+}
