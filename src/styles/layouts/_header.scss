@@ -1,29 +1,42 @@
 .header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 50px;
-  padding-right: 10%;
-  padding-left: 20%;
+  justify-content: center;
+  min-height: 55px;
 
   &--background-white {
-    background-color: white;
+    background-color: $white;
   }
 
   &--background-black {
-    background-color: black;
+    background-color: $black;
   }
 
   &--font-white {
-    color: white;
+    color: $white;
   }
 
   &--font-black {
-    color: black;
+    color: $black;
   }
 
-  &__title {
-    font-size: 1.2rem;
+  &--image-black {
+    filter: opacity(0.5) drop-shadow(0 0 0 black);
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1600px;
+  }
+
+  &__starting {
+    margin-left: 200px;
+
+    img {
+      width: 102px;
+      height: 24px;
+    }
   }
 
   &__options {

@@ -6,7 +6,7 @@ import Container from "../layouts/Container";
 const MenteeInfo = (): ReactElement => {
   return (
     <div className="mentee-info common-background">
-      <Container height={800} isColumn>
+      <Container height={800} isColumn paddingTop={"1%"}>
         <>
           <DefaultInfoForm title="기본 정보" height={450}>
             <div className="mentee-info__basic-info">

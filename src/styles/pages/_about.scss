@@ -10,39 +10,7 @@
     background-size: cover;
     background-blend-mode: multiply;
     background-color: rgba(0, 0, 0, 0.4);
-    height: 50%;
-  }
-
-  &__bottom {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-    background-color: black;
-  }
-
-  &__top-content {
-    display: flex;
-    flex-direction: column;
-    width: 750px;
-    height: 300px;
-    padding-top: 100px;
-  }
-
-  &__bottom-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 1800px;
-    height: 370px;
-    z-index: 9;
-
-    & > span {
-      font-size: 1.4rem;
-      font-weight: bold;
-      margin-left: 75px;
-      color: white;
-    }
+    height: 55%;
   }
 
   &__mask {
@@ -51,17 +19,16 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, transparent 60%, black), linear-gradient(to top, transparent 95%, black);
+    background: linear-gradient(to bottom, transparent 60%, $black), linear-gradient(to top, transparent 80%, $black);
   }
 
   &__desc {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 45%;
-    justify-content: space-evenly;
 
     & > span {
+      line-height: 60px;
       font-size: 3.2rem;
       font-weight: bold;
       color: white;
@@ -82,8 +49,26 @@
     }
   }
 
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    background-color: $black;
+  }
+
+  &__challenge-progress-desc {
+    & > span {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-left: 75px;
+      color: white;
+    }
+  }
+
   &__challenge-progress {
     display: flex;
     justify-content: space-evenly;
+    width: 1800px;
   }
 }

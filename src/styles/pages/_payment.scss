@@ -79,4 +79,29 @@
       font-weight: 700;
     }
   }
+
+  &__option {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex: 1;
+    padding-top: 20px;
+    box-sizing: border-box;
+
+    & > span {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+  }
+
+  &__policy {
+    display: flex;
+    flex-direction: column;
+
+    & > span {
+      font-size: 0.8rem;
+      color: rgb(195, 200, 205);
+      line-height: 20px;
+    }
+  }
 }
