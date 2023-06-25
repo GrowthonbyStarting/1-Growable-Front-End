@@ -1,7 +1,7 @@
 import React, { ReactElement, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Location, useLocation } from "react-router-dom";
-import { fetchToken } from "../apis/UserApi";
+import { fetchKakaoUserData } from "../apis/UserApi";
 
 const KakaoRedirect = (): ReactElement => {
   const dispatch = useDispatch();
@@ -11,7 +11,7 @@ const KakaoRedirect = (): ReactElement => {
   const code: string | null = params.get("code");
 
   useEffect(() => {
-    dispatch(fetchToken(code!) as any);
+    dispatch(fetchKakaoUserData(code!) as any);
   }, []);
 
   return <div>{code}</div>;

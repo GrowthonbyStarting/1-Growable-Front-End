@@ -57,7 +57,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 400px;
+    width: 350px;
   }
 
   &__bill-total {
@@ -78,6 +78,11 @@
       color: $cobalt;
       font-weight: 700;
     }
+  }
+
+  &__refund {
+    color: rgb(239, 135, 137);
+    font-size: 0.9rem;
   }
 
   &__option {

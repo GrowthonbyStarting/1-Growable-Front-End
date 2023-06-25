@@ -35,7 +35,7 @@ const Header = (): ReactElement => {
   const navigateToMyPage = (): void => {
     // navigateToLogin();
     // navigate("/mentor-info");
-    navigate("/payment");
+    navigate("/mentor-info");
     // 페이지 구현
   };
 

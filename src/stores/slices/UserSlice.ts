@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchToken } from "../../apis/UserApi";
-import { User } from "../../interfaces/Model";
+import { fetchKakaoUserData } from "../../apis/UserApi";
+import { User } from "../../types/interfaces/Model";
 
 interface InitialState {
   user: User;
@@ -31,15 +31,15 @@ const userSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchToken.pending, (state, action) => {
+    builder.addCase(fetchKakaoUserData.pending, (state, action) => {
       console.log(action.payload);
       state.isLoading = true;
     });
-    builder.addCase(fetchToken.rejected, (state) => {
+    builder.addCase(fetchKakaoUserData.rejected, (state) => {
       // error handling
       state.isLoading = false;
     });
-    builder.addCase(fetchToken.fulfilled, (state, action) => {
+    builder.addCase(fetchKakaoUserData.fulfilled, (state, action) => {
       const user: User = action.payload;
 
       state.user = user;

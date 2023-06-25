@@ -4,6 +4,7 @@
   border: 1px solid rgb(238, 240, 243);
   border-radius: 10px;
   text-indent: 15px;
+  font-size: 0.8rem;
 
   &::placeholder {
     color: rgb(194, 197, 202);
@@ -29,4 +30,11 @@
   }
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.common-picker {
+  width: 180px;
+  height: 44px;
+  font-size: 0.8rem;
+  color: rgb(194, 197, 202);
 }

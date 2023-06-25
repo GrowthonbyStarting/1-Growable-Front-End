@@ -2,11 +2,12 @@ import React, { ReactElement } from "react";
 
 interface Props {
   placeholder: string;
-  width: number;
+  width: string | number;
+  height?: string | number;
   title?: string;
 }
 
-const InputUserInfo = ({ placeholder, width, title }: Props): ReactElement => {
+const InputUserInfo = ({ placeholder, width, height, title }: Props): ReactElement => {
   return (
     <div className="input-user-info">
       {title && (
@@ -14,7 +15,7 @@ const InputUserInfo = ({ placeholder, width, title }: Props): ReactElement => {
           <span>{title}</span> <span>*</span>
         </div>
       )}
-      <input className="common-input" style={{ width }} placeholder={placeholder} />
+      <input className="common-input" style={{ width, height }} placeholder={placeholder} />
     </div>
   );
 };

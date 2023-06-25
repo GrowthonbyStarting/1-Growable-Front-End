@@ -24,8 +24,8 @@ const Payment = (): ReactElement => {
               </div>
               <div className="payment__detail">
                 <PaymentDetail title="멘토 정보" content="이건한" />
-                <PaymentDetail title="멘토 정보" content="이건한" />
-                <PaymentDetail title="멘토 정보" content="이건한" />
+                <PaymentDetail title="챌린지 분야" content="IT" />
+                <PaymentDetail title="챌린지 기간" content="4주" />
               </div>
             </div>
           </DefaultInfoForm>
@@ -35,20 +35,23 @@ const Payment = (): ReactElement => {
                 <div className="payment__bill-calc">
                   <div className="payment__price">
                     <span>가격</span>
-                    <span>10,000원</span>
+                    <span>30,000원</span>
                   </div>
                   <span>+</span>
                   <div className="payment__price">
-                    <span>추가 서비스</span>
-                    <span>0원</span>
+                    <span>환급금</span>
+                    <span>20,000원</span>
                   </div>
                 </div>
                 <div className="payment__bill-total">
                   <div className="payment__price">
                     <span>총 결제 금액</span>
-                    <span className="payment__price--cobalt">10,000원</span>
+                    <span className="payment__price--cobalt">50,000원</span>
                   </div>
                 </div>
+              </div>
+              <div className="payment__refund">
+                <span>* 100% 출석하면 20,000원 환급!</span>
               </div>
               <div className="payment__option">
                 <span>환불 정책</span>
