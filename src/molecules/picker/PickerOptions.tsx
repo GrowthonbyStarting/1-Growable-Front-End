@@ -1,4 +1,5 @@
 import React, { ReactElement } from "react";
+import { StyleProps } from "../../types/interfaces/Style";
 
 interface Props {
   placeholder: string;
@@ -6,11 +7,12 @@ interface Props {
   onChange: (value: any) => void;
   options: any[];
   title?: string;
+  styleProps?: StyleProps;
 }
 
-const PickerOptions = ({ placeholder, value, onChange, options, title }: Props): ReactElement => {
+const PickerOptions = ({ placeholder, value, onChange, options, title, styleProps }: Props): ReactElement => {
   return (
-    <div className="input-user-info">
+    <div className="input-user-info" style={styleProps}>
       {title && (
         <div className="input-user-info__title">
           <span>{title}</span> <span>*</span>

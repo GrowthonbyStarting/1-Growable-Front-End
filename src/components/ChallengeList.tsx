@@ -3,8 +3,15 @@ import BtnChallengeKeyword from "../molecules/buttons/BtnChallengeKeyword";
 import BtnChallengeHeartIcon from "../molecules/buttons/BtnChallengeHeartIcon";
 import { FaRegCommentAlt } from "react-icons/fa";
 import BtnSubmit from "../molecules/buttons/BtnSubmit";
+import { useNavigate } from "react-router-dom";
 
 const ChallengeList = (): ReactElement => {
+  const navigate = useNavigate();
+
+  const navigateToDetail = (): void => {
+    navigate("/challenge-detail");
+  };
+
   return (
     <div className="challenge-list">
       <div className="challenge-list__mentor-info">
@@ -29,7 +36,7 @@ const ChallengeList = (): ReactElement => {
           <BtnChallengeKeyword keyword="#키워드" />
           <BtnChallengeKeyword keyword="#키워드" />
         </div>
-        <BtnSubmit />
+        <BtnSubmit title="자세히 보기" onClick={navigateToDetail} styleProps={{ width: "100%", height: 40, backgroundColor: "black", color: "white" }} />
       </div>
     </div>
   );

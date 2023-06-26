@@ -11,6 +11,15 @@
     flex: 1;
   }
 
+  &__point {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    padding-top: 20px;
+    box-sizing: border-box;
+  }
+
   &__left {
     width: 150px;
 
@@ -42,5 +51,41 @@
     height: 120px;
     border-radius: 50%;
     background-color: grey;
+  }
+
+  &__point-content {
+    display: flex;
+    flex-direction: column;
+
+    & > span {
+      font-weight: 600;
+      line-height: 40px;
+    }
+
+    &-upper {
+      display: flex;
+      width: 85px;
+      align-items: center;
+      justify-content: space-between;
+
+      & > span {
+        font-size: 0.9rem;
+        font-weight: 800;
+        color: rgb(206, 209, 214);
+      }
+
+      & > span:first-child {
+        font-weight: 800;
+        color: $cobalt;
+      }
+    }
+
+    &-lower {
+      & > span {
+        font-size: 0.9rem;
+        font-weight: 800;
+        color: rgb(206, 209, 214);
+      }
+    }
   }
 }

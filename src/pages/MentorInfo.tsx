@@ -7,7 +7,6 @@ import PickerDate from "../molecules/picker/PickerDate";
 import PickerOptions from "../molecules/picker/PickerOptions";
 import { majorField } from "../utils/constants";
 import BtnSubmit from "../molecules/buttons/BtnSubmit";
-import BtnModify from "../molecules/buttons/BtnModify";
 
 interface MentorCategoryProps {
   title: string;
@@ -32,18 +31,17 @@ const DefaultCategory = (): ReactElement => {
   };
 
   return (
-    <DefaultInfoForm title="기본 정보" height={550}>
+    <DefaultInfoForm title="기본 정보" height={600}>
       <div className="mentor-info__common">
         <div className="mentor-info__upper mentor-info__upper--default">
           <PickerOptions title="전문분야" options={majorField} value={selectedMajorField} onChange={getSelectedMajorField} placeholder="분야를 선택해 주세요" />
-          <div className="mentor-info__space-width" />
-          <InputUserInfo placeholder="세부 분야를 입력해 주세요 (예: 백엔드, 구매관리, 제품영업)" width={330} />
+          <InputUserInfo placeholder="세부 분야를 입력해 주세요 (예: 백엔드, 구매관리, 제품영업)" styleProps={{ width: 330, marginLeft: 10 }} />
         </div>
-        <InputUserInfo placeholder="키워드" width={850} height={130} title="나를 나타내는 키워드" />
+        <InputUserInfo placeholder="키워드" styleProps={{ width: 850, height: 130 }} title="나를 나타내는 키워드" />
         <div className="mentor-info__footer">
           <div className="mentor-info__btnbox">
-            <BtnModify title="수정하기" color="rgb(200, 205, 210)" />
-            <BtnModify title="삭제하기" />
+            <BtnSubmit title="수정하기" styleProps={{ width: 75, height: 35, backgroundColor: "rgb(238, 239, 241)", color: "rgb(185, 190, 197)" }} />
+            <BtnSubmit title="삭제하기" styleProps={{ width: 75, height: 35, backgroundColor: "rgb(238, 239, 241)" }} />
           </div>
         </div>
       </div>
@@ -67,21 +65,17 @@ const WorkExpCategory = (): ReactElement => {
     <DefaultInfoForm title="업무 경력" height={600}>
       <div className="mentor-info__common">
         <div className="mentor-info__upper">
-          <InputUserInfo title="회사 정보" placeholder="근무하신 회사 이름을 알려주세요" width={365} />
-          <div className="mentor-info__space-height" />
+          <InputUserInfo title="회사 정보" placeholder="근무하신 회사 이름을 알려주세요" styleProps={{ width: 365, marginBottom: 10 }} />
           <div className="mentor-info__select-box">
-            <PickerOptions options={majorField} value={"asdf"} onChange={() => {}} placeholder="근무 형태를 알려주세요" />
-            <div className="mentor-info__space-width" />
+            <PickerOptions options={majorField} value={"asdf"} onChange={() => {}} placeholder="근무 형태를 알려주세요" styleProps={{ marginRight: 10 }} />
             <PickerOptions options={majorField} value={"asdf"} onChange={() => {}} placeholder="담당 직무를 알려주세요" />
           </div>
         </div>
         <div className="mentor-info__lower">
           <div className="mentor-info__select-box">
-            <PickerDate title="근무기간" placeholder="YYYY.MM" selected={workStartDay} onChange={getWorkStartDay} />
-            <div className="mentor-info__space-width" />
+            <PickerDate title="근무기간" placeholder="YYYY.MM" selected={workStartDay} onChange={getWorkStartDay} styleProps={{ marginRight: 10 }} />
             <PickerDate placeholder="YYYY.MM" selected={workEndDay} onChange={getWorkEndDay} />
           </div>
-          <div className="mentor-info__space-height" />
           <span>
             <label className="mentor-info__label-text">
               <input type="checkbox" />
@@ -91,8 +85,8 @@ const WorkExpCategory = (): ReactElement => {
         </div>
         <div className="mentor-info__footer">
           <div className="mentor-info__btnbox">
-            <BtnModify title="수정하기" color="rgb(200, 205, 210)" />
-            <BtnModify title="삭제하기" />
+            <BtnSubmit title="수정하기" styleProps={{ width: 75, height: 35, backgroundColor: "rgb(238, 239, 241)", color: "rgb(185, 190, 197)" }} />
+            <BtnSubmit title="삭제하기" styleProps={{ width: 75, height: 35, backgroundColor: "rgb(238, 239, 241)" }} />
           </div>
         </div>
       </div>
@@ -116,23 +110,18 @@ const LectureExpCategory = (): ReactElement => {
     <DefaultInfoForm title="업무 경력" height={600}>
       <div className="mentor-info__common">
         <div className="mentor-info__upper">
-          <InputUserInfo title="강의 정보" placeholder="강의명을 알려주세요" width={365} />
-          <div className="mentor-info__space-height" />
-          <InputUserInfo placeholder="강의가 진행되었던 회사 이름을 알려주세요" width={365} />
-          <div className="mentor-info__space-height" />
+          <InputUserInfo title="강의 정보" placeholder="강의명을 알려주세요" styleProps={{ width: 365, marginBottom: 10 }} />
+          <InputUserInfo placeholder="강의가 진행되었던 회사 이름을 알려주세요" styleProps={{ width: 365, marginBottom: 10 }} />
           <div className="mentor-info__select-box">
-            <PickerOptions options={majorField} value={"asdf"} onChange={() => {}} placeholder="강의 형태를 알려주세요" />
-            <div className="mentor-info__space-width" />
+            <PickerOptions options={majorField} value={"asdf"} onChange={() => {}} placeholder="강의 형태를 알려주세요" styleProps={{ marginRight: 10 }} />
             <PickerOptions options={majorField} value={"asdf"} onChange={() => {}} placeholder="강의 분야를 알려주세욘" />
           </div>
         </div>
         <div className="mentor-info__lower">
           <div className="mentor-info__select-box">
-            <PickerDate title="강의기간" placeholder="YYYY.MM" selected={lectureStartDay} onChange={getLectureStartDay} />
-            <div className="mentor-info__space-width" />
+            <PickerDate title="강의기간" placeholder="YYYY.MM" selected={lectureStartDay} onChange={getLectureStartDay} styleProps={{ marginRight: 10 }} />
             <PickerDate placeholder="YYYY.MM" selected={lectureEndDay} onChange={getLectureEndDay} />
           </div>
-          <div className="mentor-info__space-height" />
           <span>
             <label className="mentor-info__label-text">
               <input type="checkbox" />
@@ -142,8 +131,8 @@ const LectureExpCategory = (): ReactElement => {
         </div>
         <div className="mentor-info__footer">
           <div className="mentor-info__btnbox">
-            <BtnModify title="수정하기" color="rgb(200, 205, 210)" />
-            <BtnModify title="삭제하기" />
+            <BtnSubmit title="수정하기" styleProps={{ width: 75, height: 35, backgroundColor: "rgb(238, 239, 241)", color: "rgb(185, 190, 197)" }} />
+            <BtnSubmit title="삭제하기" styleProps={{ width: 75, height: 35, backgroundColor: "rgb(238, 239, 241)" }} />
           </div>
         </div>
       </div>

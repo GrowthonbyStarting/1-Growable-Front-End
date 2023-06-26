@@ -8,6 +8,7 @@ import Login from "../Login";
 import MentorInfo from "../MentorInfo";
 import MenteeInfo from "../MenteeInfo";
 import Payment from "../Payment";
+import ChallengeDetail from "../ChallengeDetail";
 
 const MainRouter = (): ReactElement => {
   return (
@@ -16,6 +17,7 @@ const MainRouter = (): ReactElement => {
         <Route path="/" element={<App />}>
           <Route path="about" element={<About />} />
           <Route path="challenge" element={<Challenge />} />
+          <Route path="challenge-detail" element={<ChallengeDetail />} />
           <Route path="login" element={<Login />} />
           <Route path="mentor-info" element={<MentorInfo />} />
           <Route path="mentee-info" element={<MenteeInfo />} />

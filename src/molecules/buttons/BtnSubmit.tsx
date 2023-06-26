@@ -1,7 +1,18 @@
 import React, { ReactElement } from "react";
+import { StyleProps } from "../../types/interfaces/Style";
 
-const BtnSubmit = (): ReactElement => {
-  return <button className="btn-submit">더 알아보기</button>;
+interface Props {
+  title: string;
+  styleProps?: StyleProps;
+  onClick?: () => void;
+}
+
+const BtnSubmit = ({ title, styleProps, onClick }: Props): ReactElement => {
+  return (
+    <button className="btn-submit" style={styleProps} onClick={onClick}>
+      {title}
+    </button>
+  );
 };
 
 export default BtnSubmit;

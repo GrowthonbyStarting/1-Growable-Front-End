@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import DefaultInfoForm from "../components/DefaultInfoForm";
 import Container from "../layouts/Container";
-import BtnSubmitPayment from "../molecules/buttons/BtnSubmitPayment";
+import BtnSubmit from "../molecules/buttons/BtnSubmit";
 
 const PaymentDetail = ({ title, content }: { title: string; content: string }): ReactElement => {
   return (
@@ -59,7 +59,7 @@ const Payment = (): ReactElement => {
                   <span>- 멘토의 사정으로 인해 챌린지가 취소 된 경우 자동 취소 및 100% 환불됩니다.</span>
                   <span>- 챌린지가 시작되기 전, 결제 완료 후 7일 이내에 취소할 경우 100% 환불됩니다.</span>
                 </div>
-                <BtnSubmitPayment />
+                <BtnSubmit title="챌린지 및 결제 정보를 확인하였으며, 이에 동의합니다." styleProps={{ width: "100%", height: 55, backgroundColor: "rgb(18, 132, 246)", color: "white" }} />
               </div>
             </div>
           </DefaultInfoForm>

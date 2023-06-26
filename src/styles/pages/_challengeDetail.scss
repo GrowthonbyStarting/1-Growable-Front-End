@@ -1,0 +1,132 @@
+.challenge-detail {
+  background-color: $whitegrey;
+  padding-top: 100px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 1100px;
+    height: 800px;
+    overflow: hidden;
+  }
+
+  &__header {
+    $height: 60px;
+
+    width: 100%;
+    height: $height;
+    text-indent: 20px;
+    background-image: linear-gradient(105deg, #7630ed, #537bec);
+
+    & > span {
+      line-height: $height;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: white;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex: 1;
+    padding: 100px 0;
+  }
+
+  &__left {
+    display: flex;
+    justify-content: center;
+    width: 650px;
+    box-sizing: border-box;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    & > .challenge-detail__options {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__mentor-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 450px;
+    height: 470px;
+  }
+
+  &__mentor-picture {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: grey;
+  }
+
+  &__mentor-keyword {
+    display: flex;
+  }
+
+  &__name {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  &__desc {
+    height: 120px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  &__work {
+    height: 35px;
+    font-size: 0.9rem;
+  }
+
+  &__lecture {
+    height: 55px;
+    font-size: 0.9rem;
+  }
+
+  &__options {
+    width: 200px;
+
+    & > div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      & > span {
+        font-size: 0.9rem;
+      }
+    }
+
+    &-left {
+      width: 40px;
+    }
+
+    &-right {
+      width: 90px;
+
+      & > span:first-child {
+        color: $cobalt;
+      }
+    }
+  }
+
+  &__btnbox {
+    height: 80px;
+  }
+}

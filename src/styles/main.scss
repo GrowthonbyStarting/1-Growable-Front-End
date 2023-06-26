@@ -11,9 +11,7 @@
 @import "molecules/buttons/btnSubmit.scss";
 @import "molecules/buttons/btnChallengeKeyword.scss";
 @import "molecules/buttons/btnKakaoLogin.scss";
-@import "molecules/buttons/btnSubmitPayment";
 @import "molecules/inputs/inputUserInfo.scss";
-@import "molecules/buttons/btnModify";
 
 @import "layouts/header.scss";
 @import "layouts/container.scss";
@@ -25,3 +23,4 @@
 @import "pages/menteeInfo.scss";
 @import "pages/mentorInfo.scss";
 @import "pages/payment.scss";
+@import "pages/challengeDetail.scss";
