@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchKakaoUserData } from "../../apis/UserApi";
-import { User } from "../../types/interfaces/Model";
+import { fetchBecomeMentee, fetchKakaoUserData } from "../../apis/UserApi";
+import { Mentee, User } from "../../types/interfaces/Model";
 
 interface InitialState {
   user: User;
@@ -8,7 +8,7 @@ interface InitialState {
   isLoggedIn: boolean;
 }
 
-const initialState: InitialState = {
+const initialState: InitialState = Object.freeze({
   user: {
     userCode: "",
     kakaoId: "",
@@ -17,10 +17,12 @@ const initialState: InitialState = {
     kakaoEmail: "",
     userRole: "",
     createTime: new Date(),
+    mentee: undefined,
+    mentor: undefined,
   },
   isLoading: false,
   isLoggedIn: false,
-};
+});
 
 const userSlice = createSlice({
   name: "user",
@@ -32,7 +34,6 @@ const userSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchKakaoUserData.pending, (state, action) => {
-      console.log(action.payload);
       state.isLoading = true;
     });
     builder.addCase(fetchKakaoUserData.rejected, (state) => {
@@ -45,6 +46,11 @@ const userSlice = createSlice({
       state.user = user;
       state.isLoggedIn = true;
       state.isLoading = false;
+    });
+    builder.addCase(fetchBecomeMentee.fulfilled, (state, action) => {
+      const mentee: Mentee = action.payload;
+
+      state.user.mentee = mentee;
     });
   },
 });

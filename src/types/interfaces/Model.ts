@@ -8,8 +8,8 @@ export interface User {
   kakaoEmail: string;
   userRole: string;
   createTime: Date;
-  // mentor: Mentor;
-  // mentee: Mentee;
+  mentor?: Mentor;
+  mentee?: Mentee;
 }
 
 export interface Mentee {
@@ -21,7 +21,6 @@ export interface Mentee {
   Point: number;
   phoneNumber: string;
   StartingUrl: string;
-  profileImageUrl: string;
   lecture: Lecture;
   enrollments: Enrollment[];
 }
@@ -38,7 +37,6 @@ export interface Mentor {
   keywords: string[];
   companyInfos: Company[];
   lectureExperiences: LectureExperience[];
-  profileImageUrl: string;
   lectures: Lecture[];
   enrollments: Enrollment[];
 }

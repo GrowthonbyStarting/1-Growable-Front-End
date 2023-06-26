@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-type UseInputParams<T> = [T, (v: T) => void, () => void];
+type UseInputProps<T> = [T, (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void, () => void];
 
-export const useInput = <T>(initialValue: T): UseInputParams<T> => {
+export const useInput = <T>(initialValue: T): UseInputProps<T> => {
   const [value, setValue] = useState<T>(initialValue);
 
-  const onChangeForm = (changedValue: T): void => {
-    setValue(changedValue as T);
+  const onChangeForm = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+    setValue(event.target.value as T);
   };
 
   const resetForm = (): void => {

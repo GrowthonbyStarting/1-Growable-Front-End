@@ -1,13 +1,14 @@
-import React, { ReactElement } from "react";
+import React, { ChangeEventHandler, ReactElement } from "react";
 import { StyleProps } from "../../types/interfaces/Style";
 
 interface Props {
   placeholder: string;
   styleProps?: StyleProps;
   title?: string;
+  onChange?: ChangeEventHandler | undefined;
 }
 
-const InputUserInfo = ({ placeholder, styleProps, title }: Props): ReactElement => {
+const InputUserInfo = ({ placeholder, styleProps, title, onChange }: Props): ReactElement => {
   return (
     <div className="input-user-info">
       {title && (
@@ -15,7 +16,7 @@ const InputUserInfo = ({ placeholder, styleProps, title }: Props): ReactElement 
           <span>{title}</span> <span>*</span>
         </div>
       )}
-      <input className="common-input" style={styleProps} placeholder={placeholder} />
+      <input className="common-input" style={styleProps} placeholder={placeholder} onChange={onChange} />
     </div>
   );
 };
