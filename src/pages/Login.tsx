@@ -1,5 +1,4 @@
 import React, { ReactElement } from "react";
-import { RiKakaoTalkFill } from "react-icons/ri";
 import BtnKakaoLogin from "../molecules/buttons/BtnKakaoLogin";
 import Container from "../layouts/Container";
 

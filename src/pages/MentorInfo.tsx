@@ -7,6 +7,7 @@ import PickerDate from "../molecules/picker/PickerDate";
 import PickerOptions from "../molecules/picker/PickerOptions";
 import { majorField } from "../utils/constants";
 import BtnSubmit from "../molecules/buttons/BtnSubmit";
+import { usePreventUrlAccess } from "../hooks/usePreventUrlAccess";
 
 interface MentorCategoryProps {
   title: string;
@@ -142,6 +143,8 @@ const LectureExpCategory = (): ReactElement => {
 
 const MentorInfo = (): ReactElement => {
   const [currentCategory, setCurrentCategory] = useState<MentorInfoCategory>(MentorInfoCategory.DEFAULT);
+
+  usePreventUrlAccess();
 
   const onCategoryClick = (category: MentorInfoCategory): void => {
     setCurrentCategory(category);

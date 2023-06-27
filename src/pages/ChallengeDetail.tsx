@@ -1,10 +1,12 @@
 import React, { ReactElement } from "react";
 import BtnChallengeKeyword from "../molecules/buttons/BtnChallengeKeyword";
 import BtnSubmit from "../molecules/buttons/BtnSubmit";
-import { FaHeart } from "react-icons/fa";
 import BtnChallengeHeartIcon from "../molecules/buttons/BtnChallengeHeartIcon";
+import { usePreventUrlAccess } from "../hooks/usePreventUrlAccess";
 
 const ChallengeDetail = (): ReactElement => {
+  usePreventUrlAccess();
+
   return (
     <div className="challenge-detail common-background">
       <div className="challenge-detail__container common-form">

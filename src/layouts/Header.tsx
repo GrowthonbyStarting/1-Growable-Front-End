@@ -1,11 +1,14 @@
 import React, { ReactElement, useMemo } from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "../stores/RootReducer";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { logout } from "../stores/slices/UserSlice";
+import { useNavigateByAuth } from "../hooks/useNavigateByAuth";
 
 const Header = (): ReactElement => {
-  const isLoggedIn: boolean = useSelector((state: RootState) => state.user.isLoggedIn);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const navigateByAuth = useNavigateByAuth("/mentee-info");
 
   const blackTheme: boolean = window.location.pathname === "/about" || window.location.pathname === "/login" ? true : false;
 
@@ -13,8 +16,9 @@ const Header = (): ReactElement => {
     return blackTheme ? "https://start-ing.kr/_next/image?url=%2Fimg%2Fcommon%2FlogoWhite.png&w=256&q=75" : "https://start-ing.kr/_next/image?url=%2Fimg%2Fcommon%2Flogo.png&w=256&q=75";
   }, [blackTheme]);
 
-  const navigateToLogin = (): void => {
-    !isLoggedIn && navigate("/login");
+  const logoutTemp = (): void => {
+    dispatch(logout());
+    navigate("/about");
   };
 
   const navigateToAbout = (): void => {
@@ -22,34 +26,29 @@ const Header = (): ReactElement => {
   };
 
   const navigateToChallenge = (): void => {
-    navigateToLogin();
-    // navigate("/challenge");
+    navigate("/challenge");
   };
 
   const navigateToResume = (): void => {
-    // navigateToLogin();
-    navigate("/mentee-info");
-    // 페이지 구현
+    navigateByAuth();
   };
 
-  const navigateToMyPage = (): void => {
-    // navigateToLogin();
-    navigate("/mentor-info");
-    // navigate("/payment");
-    // 페이지 구현
-  };
+  // const navigateToMyPage = (): void => {
+  //   navigate("/mentor-info");
+  //   // navigate("/payment");
+  //   // 페이지 구현
+  // };
 
   return (
     <div className={`header ${blackTheme ? "header--background-black header--font-white" : "header--background-white header--font-black"}`}>
       <div className="header__content">
         <div className="header__starting">
-          <img src={startingLogo} />
+          <img src={startingLogo} onClick={logoutTemp} />
         </div>
         <div className="header__options">
           <span onClick={navigateToAbout}>About</span>
           <span onClick={navigateToChallenge}>Challenge</span>
           <span onClick={navigateToResume}>내 이력서</span>
-          <span onClick={navigateToMyPage}>마이 페이지</span>
         </div>
       </div>
     </div>

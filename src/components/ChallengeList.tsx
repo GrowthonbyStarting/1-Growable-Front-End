@@ -3,13 +3,13 @@ import BtnChallengeKeyword from "../molecules/buttons/BtnChallengeKeyword";
 import BtnChallengeHeartIcon from "../molecules/buttons/BtnChallengeHeartIcon";
 import { FaRegCommentAlt } from "react-icons/fa";
 import BtnSubmit from "../molecules/buttons/BtnSubmit";
-import { useNavigate } from "react-router-dom";
+import { useNavigateByAuth } from "../hooks/useNavigateByAuth";
 
 const ChallengeList = (): ReactElement => {
-  const navigate = useNavigate();
+  const navigateByAuth = useNavigateByAuth("/challenge-detail");
 
   const navigateToDetail = (): void => {
-    navigate("/challenge-detail");
+    navigateByAuth();
   };
 
   return (

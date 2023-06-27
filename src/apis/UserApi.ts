@@ -11,7 +11,7 @@ export const fetchKakaoUserData = createAsyncThunk("api/getCode", async (code: s
   return result;
 });
 
-export const fetchBecomeMentee = createAsyncThunk("user/become-mentee", async ({ userId, becomeMenteeRequest }: { userId: string; becomeMenteeRequest: BecomeMenteeRequest }): Promise<Mentee> => {
+export const fetchBecomeMentee = createAsyncThunk("user/become-mentee", async ({ userId, becomeMenteeRequest }: { userId: number; becomeMenteeRequest: BecomeMenteeRequest }): Promise<Mentee> => {
   const response: AxiosResponse = await axios.post(`${process.env.REACT_APP_SERVER_PATH}/users/${userId}/become-mentee`, becomeMenteeRequest);
   const result: any = response.data;
   console.log(response);

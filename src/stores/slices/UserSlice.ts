@@ -11,7 +11,7 @@ interface InitialState {
 const initialState: InitialState = Object.freeze({
   user: {
     userCode: "",
-    kakaoId: "",
+    kakaoId: 0,
     kakaoProfileImg: "",
     kakaoNickname: "",
     kakaoEmail: "",

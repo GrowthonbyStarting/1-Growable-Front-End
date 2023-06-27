@@ -2,6 +2,7 @@ import React, { ReactElement } from "react";
 import DefaultInfoForm from "../components/DefaultInfoForm";
 import Container from "../layouts/Container";
 import BtnSubmit from "../molecules/buttons/BtnSubmit";
+import { usePreventUrlAccess } from "../hooks/usePreventUrlAccess";
 
 const PaymentDetail = ({ title, content }: { title: string; content: string }): ReactElement => {
   return (
@@ -13,6 +14,8 @@ const PaymentDetail = ({ title, content }: { title: string; content: string }): 
 };
 
 const Payment = (): ReactElement => {
+  usePreventUrlAccess();
+
   return (
     <div className="payment common-background">
       <Container isColumn height={1000}>

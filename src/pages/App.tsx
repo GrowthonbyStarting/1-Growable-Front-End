@@ -1,13 +1,16 @@
 import React, { ReactElement, useEffect } from "react";
-import { NavigateFunction, Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Header from "../layouts/Header";
 
 const App = (): ReactElement => {
-  const navigate: NavigateFunction = useNavigate();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
-    navigate("/about");
-  }, []);
+    if (location.pathname === "/") {
+      navigate("/about");
+    }
+  }, [location, navigate]);
 
   return (
     <div className="app">
@@ -16,5 +19,4 @@ const App = (): ReactElement => {
     </div>
   );
 };
-
 export default App;

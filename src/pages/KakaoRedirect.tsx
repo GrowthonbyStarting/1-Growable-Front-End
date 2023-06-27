@@ -3,8 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { Location, useLocation, useNavigate } from "react-router-dom";
 import { fetchKakaoUserData } from "../apis/UserApi";
 import { RootState } from "../stores/RootReducer";
+import { User } from "../types/interfaces/Model";
 
 const KakaoRedirect = (): ReactElement => {
+  const user: User = useSelector((state: RootState) => state.user.user);
   const isLoggedIn: boolean = useSelector((state: RootState) => state.user.isLoggedIn);
 
   const dispatch = useDispatch();
@@ -20,7 +22,9 @@ const KakaoRedirect = (): ReactElement => {
   }, []);
 
   useEffect(() => {
-    isLoggedIn && navigate("/about");
+    if (isLoggedIn) {
+      user.mentee || user.mentor ? navigate("/about") : navigate("/identity");
+    }
   }, [isLoggedIn]);
 
   return <div></div>;

@@ -1,0 +1,14 @@
+.choice-identity {
+  background-color: $whitegrey;
+
+  &__content {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__btnBox {
+    display: flex;
+  }
+}
