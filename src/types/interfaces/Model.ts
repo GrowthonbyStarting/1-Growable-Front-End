@@ -1,7 +1,7 @@
 import { Identity } from "../enums";
 
 export interface User {
-  userCode: string;
+  userCode: number;
   kakaoId: number;
   kakaoProfileImg: string;
   kakaoNickname: string;

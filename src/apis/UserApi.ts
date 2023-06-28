@@ -11,8 +11,8 @@ export const fetchKakaoUserData = createAsyncThunk("api/getCode", async (code: s
   return result;
 });
 
-export const fetchBecomeMentee = createAsyncThunk("user/become-mentee", async ({ userId, becomeMenteeRequest }: { userId: number; becomeMenteeRequest: BecomeMenteeRequest }): Promise<Mentee> => {
-  const response: AxiosResponse = await axios.post(`${process.env.REACT_APP_SERVER_PATH}/users/${userId}/become-mentee`, becomeMenteeRequest);
+export const fetchBecomeMentee = createAsyncThunk("mentee/become-mentee", async ({ userId, becomeMenteeRequest }: { userId: number; becomeMenteeRequest: BecomeMenteeRequest }): Promise<Mentee> => {
+  const response: AxiosResponse = await axios.post(`${process.env.REACT_APP_SERVER_PATH}/mentee/${userId}/become-mentee`, becomeMenteeRequest);
   const result: any = response.data;
   console.log(response);
 
@@ -20,8 +20,8 @@ export const fetchBecomeMentee = createAsyncThunk("user/become-mentee", async ({
 });
 
 // fix parameter
-export const fetchBecomeMentor = createAsyncThunk("user/become-mentor", async (userId: string): Promise<Mentor> => {
-  const response: AxiosResponse = await axios.post(`${process.env.REACT_APP_SERVER_PATH}/users/${userId}/become-mentor`);
+export const fetchBecomeMentor = createAsyncThunk("mentor/become-mentor", async (userId: string): Promise<Mentor> => {
+  const response: AxiosResponse = await axios.post(`${process.env.REACT_APP_SERVER_PATH}/mentor/${userId}/become-mentor`);
   const result: any = response.data;
 
   return result;

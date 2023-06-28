@@ -40,7 +40,7 @@ const MenteeInfo = (): ReactElement => {
       startingUrl,
     };
 
-    dispatch(fetchBecomeMentee({ userId: user.kakaoId, becomeMenteeRequest }) as any);
+    dispatch(fetchBecomeMentee({ userId: user.userCode, becomeMenteeRequest }) as any);
   };
 
   return (
