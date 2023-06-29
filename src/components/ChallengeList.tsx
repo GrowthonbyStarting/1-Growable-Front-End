@@ -4,8 +4,13 @@ import BtnChallengeHeartIcon from "../molecules/buttons/BtnChallengeHeartIcon";
 import { FaRegCommentAlt } from "react-icons/fa";
 import BtnSubmit from "../molecules/buttons/BtnSubmit";
 import { useNavigateByAuth } from "../hooks/useNavigateByAuth";
+import { Lecture } from "../types/interfaces/Model";
 
-const ChallengeList = (): ReactElement => {
+interface Props {
+  lecture: Lecture;
+}
+
+const ChallengeList = ({ lecture }: Props): ReactElement => {
   const navigateByAuth = useNavigateByAuth("/challenge-detail");
 
   const navigateToDetail = (): void => {
@@ -22,10 +27,15 @@ const ChallengeList = (): ReactElement => {
           <FaRegCommentAlt color="rgb(81, 132, 236)" />
         </div>
         <div className="challenge-list__picture"></div>
-        <span className="challenge-list__mentor-name-text">멘토 이름</span>
+        <span className="challenge-list__mentor-name-text">{lecture.mentorName}</span>
         <div className="challenge-list__major">
           <span className="challenge-list__major-text">전문분야</span>
           <span className="challenge-list__major-text">전문분야</span>
+        </div>
+        <div>쿠팡</div>
+        <div className="challenge-list__tag-box">
+          <div className="challenge-list__tag">#취업률95%</div>
+          <div className="challenge-list__tag">#후기36건</div>
         </div>
       </div>
       <hr className="challenge-list__hr" />

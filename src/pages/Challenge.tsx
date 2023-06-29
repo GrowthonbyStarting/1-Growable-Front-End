@@ -1,8 +1,21 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 import ChallengeList from "../components/ChallengeList";
 import BtnChallengeCategory from "../molecules/buttons/BtnChallengeCategory";
+import { fetchLectureList } from "../apis/LectureApi";
+import { Lecture } from "../types/interfaces/Model";
 
 const Challenge = (): ReactElement => {
+  const [lectureList, setLectureList] = useState<Lecture[]>([]);
+
+  useEffect(() => {
+    fetchLectureData();
+  }, []);
+
+  const fetchLectureData = async (): Promise<void> => {
+    const lectures: Lecture[] = await fetchLectureList();
+    setLectureList(lectures);
+  };
+
   return (
     <div className="challenge">
       <div className="challenge__options">
@@ -17,15 +30,9 @@ const Challenge = (): ReactElement => {
         </div>
       </div>
       <div className="challenge__lists">
-        <ChallengeList />
-        <ChallengeList />
-        <ChallengeList />
-        <ChallengeList />
-        <ChallengeList />
-        <ChallengeList />
-        <ChallengeList />
-        <ChallengeList />
-        <ChallengeList />
+        {lectureList.map((lecture, idx) => {
+          return <ChallengeList key={idx} lecture={lecture} />;
+        })}
       </div>
     </div>
   );

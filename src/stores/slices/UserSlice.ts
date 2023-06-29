@@ -19,6 +19,7 @@ const initialState: InitialState = Object.freeze({
     createTime: new Date(),
     mentee: undefined,
     mentor: undefined,
+    token: "",
   },
   isLoading: false,
   isLoggedIn: false,

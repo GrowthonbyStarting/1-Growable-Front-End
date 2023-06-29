@@ -15,7 +15,7 @@ export const useNavigateByAuth = (endPoint: string) => {
       return;
     }
 
-    if (!user.mentee || !user.mentor) {
+    if (!user.mentee && !user.mentor) {
       navigate("/identity");
       return;
     }

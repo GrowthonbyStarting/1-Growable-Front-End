@@ -3,9 +3,16 @@ import BtnChallengeKeyword from "../molecules/buttons/BtnChallengeKeyword";
 import BtnSubmit from "../molecules/buttons/BtnSubmit";
 import BtnChallengeHeartIcon from "../molecules/buttons/BtnChallengeHeartIcon";
 import { usePreventUrlAccess } from "../hooks/usePreventUrlAccess";
+import { useNavigate } from "react-router-dom";
 
 const ChallengeDetail = (): ReactElement => {
+  const navigate = useNavigate();
+
   usePreventUrlAccess();
+
+  const navigateToPayment = (): void => {
+    navigate("/payment");
+  };
 
   return (
     <div className="challenge-detail common-background">
@@ -55,7 +62,7 @@ const ChallengeDetail = (): ReactElement => {
             </div>
             <div className="challenge-detail__btnbox">
               <BtnSubmit title="문의하기" styleProps={{ width: 250, height: 35, backgroundColor: "rgb(252, 252, 252)", border: "1px solid black" }} />
-              <BtnSubmit title="참여하기" styleProps={{ width: 250, height: 35, backgroundColor: "black", color: "white" }} />
+              <BtnSubmit onClick={navigateToPayment} title="참여하기" styleProps={{ width: 250, height: 35, backgroundColor: "black", color: "white" }} />
             </div>
           </div>
         </div>

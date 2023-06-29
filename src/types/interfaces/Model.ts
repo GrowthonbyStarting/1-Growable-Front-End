@@ -10,6 +10,7 @@ export interface User {
   createTime: Date;
   mentor?: Mentor;
   mentee?: Mentee;
+  token?: string;
 }
 
 export interface Mentee {
@@ -20,7 +21,7 @@ export interface Mentee {
   identity: Identity;
   Point: number;
   phoneNumber: string;
-  StartingUrl: string;
+  startingUrl: string;
   lecture: Lecture;
   enrollments: Enrollment[];
 }

@@ -11,8 +11,8 @@
     position: relative;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    height: 55%;
+    justify-content: space-around;
+    height: 60%;
     padding-top: 20px;
   }
 
@@ -36,6 +36,26 @@
     display: flex;
     justify-content: space-between;
     width: 40%;
+  }
+
+  &__tag-box {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 23px;
+    background-color: rgb(239, 247, 254);
+    border: 1px solid $cobalt;
+    border-radius: 5px;
+    color: $cobalt;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin: 0 5px;
   }
 
   &__keyword-box {
@@ -67,7 +87,7 @@
     position: absolute;
     align-items: center;
     justify-content: center;
-    top: 120px;
+    top: 100px;
     right: 115px;
     width: 32px;
     height: 32px;

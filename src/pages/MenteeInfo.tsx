@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import DefaultInfoForm from "../components/DefaultInfoForm";
 import InputUserInfo from "../molecules/inputs/InputUserInfo";
@@ -11,6 +11,7 @@ import { BecomeMenteeRequest } from "../types/interfaces/Request";
 import { Identity } from "../types/enums";
 import { fetchBecomeMentee } from "../apis/UserApi";
 import { usePreventUrlAccess } from "../hooks/usePreventUrlAccess";
+import InfoTextBox from "../molecules/InfoTextBox";
 
 const MenteeInfo = (): ReactElement => {
   const user: User = useSelector((state: RootState) => state.user.user);
@@ -21,8 +22,14 @@ const MenteeInfo = (): ReactElement => {
   const [name, setName, resetName] = useInput("");
   const [tel, setTel, resetTel] = useInput("");
   const [startingUrl, setStartingUrl, resetStartingUrl] = useInput("");
+  const [menteeInfo, setMenteeInfo] = useState<Mentee | undefined>(mentee);
+  const [modifyModeToggle, setModifyModeToggle] = useState<boolean>(true);
 
   usePreventUrlAccess();
+
+  useEffect(() => {
+    mentee && setModifyModeToggle(false);
+  }, []);
 
   const onSave = (): void => {
     if (email === "" || name === "" || tel === "" || startingUrl === "") {
@@ -40,7 +47,14 @@ const MenteeInfo = (): ReactElement => {
       startingUrl,
     };
 
-    dispatch(fetchBecomeMentee({ userId: user.userCode, becomeMenteeRequest }) as any);
+    dispatch(fetchBecomeMentee({ userId: user.userCode, becomeMenteeRequest }) as any).then((response: any) => {
+      setMenteeInfo(response.payload);
+      setModifyModeToggle(false);
+    });
+  };
+
+  const onModify = (): void => {
+    setModifyModeToggle(true);
   };
 
   return (
@@ -56,18 +70,32 @@ const MenteeInfo = (): ReactElement => {
                 </div>
               </div>
               <div className="mentee-info__right">
-                <InputUserInfo placeholder="aaaa@kakao.com" title="이메일" styleProps={{ width: 550 }} onChange={setEmail} />
-                <InputUserInfo placeholder="OOO" title="이름" styleProps={{ width: 550 }} onChange={setName} />
-                <InputUserInfo placeholder="000-0000-0000" title="전화번호" styleProps={{ width: 550 }} onChange={setTel} />
+                {modifyModeToggle ? (
+                  <>
+                    <InputUserInfo placeholder="aaaa@kakao.com" title="이메일" styleProps={{ width: 550 }} onChange={setEmail} />
+                    <InputUserInfo placeholder="OOO" title="이름" styleProps={{ width: 550 }} onChange={setName} />
+                    <InputUserInfo placeholder="000-0000-0000" title="전화번호" styleProps={{ width: 550 }} onChange={setTel} />
+                  </>
+                ) : (
+                  <>
+                    <InfoTextBox content={menteeInfo!.email} styleProps={{ width: 550 }} title="이메일" />
+                    <InfoTextBox content={menteeInfo!.name} styleProps={{ width: 550 }} title="이름" />
+                    <InfoTextBox content={menteeInfo!.phoneNumber} styleProps={{ width: 550 }} title="전화번호" />
+                  </>
+                )}
               </div>
             </div>
           </DefaultInfoForm>
           <DefaultInfoForm title="스타팅 이력서 링크" height={230}>
             <div className="mentee-info__resume">
-              <InputUserInfo placeholder="관련 링크를 입력해주세요" styleProps={{ width: 850 }} onChange={setStartingUrl} />
+              {modifyModeToggle ? (
+                <InputUserInfo placeholder="관련 링크를 입력해주세요" styleProps={{ width: 850 }} onChange={setStartingUrl} />
+              ) : (
+                <InfoTextBox content={menteeInfo!.startingUrl} styleProps={{ width: 550 }} />
+              )}
             </div>
           </DefaultInfoForm>
-          <DefaultInfoForm title="스타팅 이력서 링크" height={400}>
+          <DefaultInfoForm title="포인트 관리" height={400}>
             <div className="mentee-info__point">
               <div className="mentee-info__point-content">
                 <span>현재 포인트</span>
@@ -77,7 +105,7 @@ const MenteeInfo = (): ReactElement => {
                 </div>
               </div>
               <div className="mentee-info__point-content">
-                <span>현재 포인트</span>
+                <span>계좌</span>
                 <div className="mentee-info__point-content-lower">
                   <span>신한은행 011-123-456789</span>
                 </div>
@@ -85,7 +113,11 @@ const MenteeInfo = (): ReactElement => {
               <BtnSubmit title="인출하기" styleProps={{ width: 75, height: 35, backgroundColor: "rgb(16, 16, 22)", color: "white" }} />
             </div>
           </DefaultInfoForm>
-          <BtnSubmit title="저장하기" styleProps={{ width: "100%", height: 60, backgroundColor: "rgb(18, 132, 246)", color: "white" }} onClick={onSave} />
+          {modifyModeToggle ? (
+            <BtnSubmit title="저장하기" styleProps={{ width: "100%", height: 60, backgroundColor: "rgb(18, 132, 246)", color: "white" }} onClick={onSave} />
+          ) : (
+            <BtnSubmit title="수정하기" styleProps={{ width: "100%", height: 60, backgroundColor: "rgb(239, 241, 245)", color: "white" }} onClick={onModify} />
+          )}
         </>
       </Container>
     </div>

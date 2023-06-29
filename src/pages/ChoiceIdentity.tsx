@@ -3,9 +3,15 @@ import Container from "../layouts/Container";
 import DefaultInfoForm from "../components/DefaultInfoForm";
 import BtnSubmit from "../molecules/buttons/BtnSubmit";
 import { useNavigate } from "react-router-dom";
+import { User } from "../types/interfaces/Model";
+import { useSelector } from "react-redux";
+import { RootState } from "../stores/RootReducer";
 
 const ChoiceIdentity = (): ReactElement => {
+  const user: User = useSelector((state: RootState) => state.user.user);
   const navigate = useNavigate();
+
+  console.log(user);
 
   const navigateToMentee = (): void => {
     navigate("/mentee-info");

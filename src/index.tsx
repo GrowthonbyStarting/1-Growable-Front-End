@@ -7,8 +7,10 @@ import store from "./config/StoreConfig";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import "./styles/main.scss";
+import { injectStore } from "./config/AxiosConfig";
 
 const persistor = persistStore(store);
+injectStore(store);
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(

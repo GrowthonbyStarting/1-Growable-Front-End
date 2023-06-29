@@ -3,8 +3,13 @@ import BtnGotoTeamlist from "../molecules/buttons/BtnGotoTeamlist";
 import ChallengeProgress from "../molecules/ChallengeProgress";
 import { FaUsers, FaRegHandshake, FaCheck, FaMedal, FaUserTie } from "react-icons/fa";
 import Container from "../layouts/Container";
+import { RootState } from "../stores/RootReducer";
+import { useSelector } from "react-redux";
+import { User } from "../types/interfaces/Model";
 
 const About = (): ReactElement => {
+  const user: User = useSelector((state: RootState) => state.user.user);
+  console.log(user);
   return (
     <div className="about">
       <div className="about__top">
