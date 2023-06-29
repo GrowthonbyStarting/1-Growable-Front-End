@@ -7,7 +7,6 @@ import customAxiosRequest from "../config/AxiosConfig";
 
 export const fetchKakaoUserData = createAsyncThunk("api/getCode", async (code: string): Promise<User> => {
   const response: AxiosResponse = await axios.post(`${serverPath}/api/getCode`, { authCode: code, redirectURL: kakaoRedirectURI });
-  console.log(response);
   const result: any = response.data.user;
   result.token = response.data.token;
 

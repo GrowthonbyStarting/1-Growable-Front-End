@@ -19,11 +19,12 @@ export interface Mentee {
   name: string;
   email: string;
   identity: Identity;
-  Point: number;
+  point: number;
   phoneNumber: string;
   startingUrl: string;
   lecture: Lecture;
   enrollments: Enrollment[];
+  accountNumber: string;
 }
 
 export interface Mentor {
@@ -40,6 +41,7 @@ export interface Mentor {
   lectureExperiences: LectureExperience[];
   lectures: Lecture[];
   enrollments: Enrollment[];
+  profileImgUrl: string;
 }
 
 export interface Company {

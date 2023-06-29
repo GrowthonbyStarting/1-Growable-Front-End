@@ -64,14 +64,12 @@
 
     &-upper {
       display: flex;
-      width: 85px;
-      align-items: center;
-      justify-content: space-between;
 
       & > span {
         font-size: 0.9rem;
         font-weight: 800;
         color: rgb(206, 209, 214);
+        margin-right: 7px;
       }
 
       & > span:first-child {

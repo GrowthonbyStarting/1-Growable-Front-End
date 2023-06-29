@@ -3,15 +3,19 @@ import BtnChallengeKeyword from "../molecules/buttons/BtnChallengeKeyword";
 import BtnSubmit from "../molecules/buttons/BtnSubmit";
 import BtnChallengeHeartIcon from "../molecules/buttons/BtnChallengeHeartIcon";
 import { usePreventUrlAccess } from "../hooks/usePreventUrlAccess";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Lecture } from "../types/interfaces/Model";
 
 const ChallengeDetail = (): ReactElement => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const { param }: { param: Lecture } = location.state;
 
   usePreventUrlAccess();
 
   const navigateToPayment = (): void => {
-    navigate("/payment");
+    navigate("/payment", { state: { param } });
   };
 
   return (
@@ -33,7 +37,7 @@ const ChallengeDetail = (): ReactElement => {
           </div>
           <div className="challenge-detail__right">
             <div className="challenge-detail__name">
-              <span>이건환</span>
+              <span>{param.mentorName}</span>
             </div>
             <div className="challenge-detail__desc">
               <span># IT계의 1타 강사</span>

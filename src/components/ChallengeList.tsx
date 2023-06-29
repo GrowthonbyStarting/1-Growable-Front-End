@@ -11,7 +11,7 @@ interface Props {
 }
 
 const ChallengeList = ({ lecture }: Props): ReactElement => {
-  const navigateByAuth = useNavigateByAuth("/challenge-detail");
+  const navigateByAuth = useNavigateByAuth("/challenge-detail", lecture);
 
   const navigateToDetail = (): void => {
     navigateByAuth();
@@ -29,8 +29,8 @@ const ChallengeList = ({ lecture }: Props): ReactElement => {
         <div className="challenge-list__picture"></div>
         <span className="challenge-list__mentor-name-text">{lecture.mentorName}</span>
         <div className="challenge-list__major">
-          <span className="challenge-list__major-text">전문분야</span>
-          <span className="challenge-list__major-text">전문분야</span>
+          <span className="challenge-list__major-text">{lecture.mentor.category}</span>
+          <span className="challenge-list__major-text">{lecture.mentor.subcategory}</span>
         </div>
         <div>쿠팡</div>
         <div className="challenge-list__tag-box">

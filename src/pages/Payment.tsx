@@ -3,6 +3,9 @@ import DefaultInfoForm from "../components/DefaultInfoForm";
 import Container from "../layouts/Container";
 import BtnSubmit from "../molecules/buttons/BtnSubmit";
 import { usePreventUrlAccess } from "../hooks/usePreventUrlAccess";
+import { useLocation } from "react-router-dom";
+import { Lecture } from "../types/interfaces/Model";
+import { weekDiff } from "../utils/helper";
 
 const PaymentDetail = ({ title, content }: { title: string; content: string }): ReactElement => {
   return (
@@ -14,6 +17,9 @@ const PaymentDetail = ({ title, content }: { title: string; content: string }): 
 };
 
 const Payment = (): ReactElement => {
+  const location = useLocation();
+  const { param }: { param: Lecture } = location.state;
+
   usePreventUrlAccess();
 
   return (
@@ -23,12 +29,12 @@ const Payment = (): ReactElement => {
           <DefaultInfoForm title="결제" height={370} padding={45}>
             <div className="payment__info">
               <div className="payment__title">
-                <span>이건환님의 챌린지를 신청하셨습니다.</span>
+                <span>{param.mentorName}님의 챌린지를 신청하셨습니다.</span>
               </div>
               <div className="payment__detail">
-                <PaymentDetail title="멘토 정보" content="이건한" />
-                <PaymentDetail title="챌린지 분야" content="IT" />
-                <PaymentDetail title="챌린지 기간" content="4주" />
+                <PaymentDetail title="멘토 정보" content={param.mentorName} />
+                <PaymentDetail title="챌린지 분야" content={param.mentor.category ?? "-"} />
+                <PaymentDetail title="챌린지 기간" content={`${weekDiff(new Date(param.lectureStartDate), new Date(param.lectureEndDate)).toString()}주`} />
               </div>
             </div>
           </DefaultInfoForm>
@@ -38,7 +44,7 @@ const Payment = (): ReactElement => {
                 <div className="payment__bill-calc">
                   <div className="payment__price">
                     <span>가격</span>
-                    <span>30,000원</span>
+                    <span>{param.fee.toLocaleString()}</span>
                   </div>
                   <span>+</span>
                   <div className="payment__price">
@@ -49,7 +55,7 @@ const Payment = (): ReactElement => {
                 <div className="payment__bill-total">
                   <div className="payment__price">
                     <span>총 결제 금액</span>
-                    <span className="payment__price--cobalt">50,000원</span>
+                    <span className="payment__price--cobalt">{(param.fee - 20000).toLocaleString()}원</span>
                   </div>
                 </div>
               </div>

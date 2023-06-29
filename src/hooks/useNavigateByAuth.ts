@@ -3,7 +3,7 @@ import { User } from "../types/interfaces/Model";
 import { RootState } from "../stores/RootReducer";
 import { useNavigate } from "react-router-dom";
 
-export const useNavigateByAuth = (endPoint: string) => {
+export const useNavigateByAuth = (endPoint: string, param?: any) => {
   const user: User = useSelector((state: RootState) => state.user.user);
   const isLoggedIn: boolean = useSelector((state: RootState) => state.user.isLoggedIn);
 
@@ -20,7 +20,7 @@ export const useNavigateByAuth = (endPoint: string) => {
       return;
     }
 
-    navigate(endPoint);
+    navigate(endPoint, { state: { param } });
   };
 
   return navigateTo;

@@ -5,10 +5,11 @@ interface Props {
   placeholder: string;
   styleProps?: StyleProps;
   title?: string;
+  value?: string;
   onChange?: ChangeEventHandler | undefined;
 }
 
-const InputUserInfo = ({ placeholder, styleProps, title, onChange }: Props): ReactElement => {
+const InputUserInfo = ({ placeholder, styleProps, value, title, onChange }: Props): ReactElement => {
   return (
     <div className="input-user-info">
       {title && (
@@ -16,7 +17,7 @@ const InputUserInfo = ({ placeholder, styleProps, title, onChange }: Props): Rea
           <span>{title}</span> <span>*</span>
         </div>
       )}
-      <input className="common-input" style={styleProps} placeholder={placeholder} onChange={onChange} />
+      <input className="common-input" value={value} style={styleProps} placeholder={placeholder} onChange={onChange} />
     </div>
   );
 };

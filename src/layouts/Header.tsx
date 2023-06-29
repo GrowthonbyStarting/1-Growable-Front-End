@@ -16,11 +16,6 @@ const Header = (): ReactElement => {
     return blackTheme ? "https://start-ing.kr/_next/image?url=%2Fimg%2Fcommon%2FlogoWhite.png&w=256&q=75" : "https://start-ing.kr/_next/image?url=%2Fimg%2Fcommon%2Flogo.png&w=256&q=75";
   }, [blackTheme]);
 
-  const logoutTemp = (): void => {
-    dispatch(logout());
-    navigate("/about");
-  };
-
   const navigateToAbout = (): void => {
     navigate("/about");
   };
@@ -43,7 +38,7 @@ const Header = (): ReactElement => {
     <div className={`header ${blackTheme ? "header--background-black header--font-white" : "header--background-white header--font-black"}`}>
       <div className="header__content">
         <div className="header__starting">
-          <img src={startingLogo} onClick={logoutTemp} />
+          <img src={startingLogo} />
         </div>
         <div className="header__options">
           <span onClick={navigateToAbout}>About</span>
