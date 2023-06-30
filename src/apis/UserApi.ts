@@ -16,7 +16,6 @@ export const fetchKakaoUserData = createAsyncThunk("api/getCode", async (code: s
 export const fetchBecomeMentee = createAsyncThunk("mentee/become-mentee", async ({ userId, becomeMenteeRequest }: { userId: number; becomeMenteeRequest: BecomeMenteeRequest }): Promise<Mentee> => {
   const response: AxiosResponse = await customAxiosRequest.post(`${serverPath}/mentee/${userId}/become-mentee`, becomeMenteeRequest);
   const result: Mentee = JSON.parse(response.config.data);
-  console.log(result);
 
   return result;
 });

@@ -11,8 +11,6 @@ const ChoiceIdentity = (): ReactElement => {
   const user: User = useSelector((state: RootState) => state.user.user);
   const navigate = useNavigate();
 
-  console.log(user);
-
   const navigateToMentee = (): void => {
     navigate("/mentee-info");
   };
