@@ -9,7 +9,7 @@ import { User } from "../types/interfaces/Model";
 
 const About = (): ReactElement => {
   const user: User = useSelector((state: RootState) => state.user.user);
-  console.log(user);
+
   return (
     <div className="about">
       <div className="about__top">

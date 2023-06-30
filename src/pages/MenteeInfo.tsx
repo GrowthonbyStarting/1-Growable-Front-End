@@ -17,7 +17,6 @@ const MenteeInfo = (): ReactElement => {
   const user: User = useSelector((state: RootState) => state.user.user);
   const mentee: Mentee | undefined = useSelector((state: RootState) => state.user.user.mentee);
   const dispatch = useDispatch();
-  console.log(mentee);
 
   const [email, setEmail, resetEmail] = useInput(mentee ? mentee.email : "");
   const [name, setName, resetName] = useInput(mentee ? mentee.name : "");

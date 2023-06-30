@@ -6,6 +6,5 @@ export const getKakaoOAuth2RequestURL = (key: string): string => {
 };
 
 export const weekDiff = (start: Date, end: Date): number => {
-  console.log(typeof start, typeof end);
   return differenceInWeeks(end, start) + 1;
 };

@@ -53,7 +53,6 @@ export const fetchLectureStatus = async (): Promise<any> => {
 
 export const fetchLectureList = async (): Promise<Lecture[]> => {
   const response: AxiosResponse = await axios.get(`${serverPath}/api/lectures`);
-  console.log(response);
   const result: Lecture[] = response.data;
 
   return result;
