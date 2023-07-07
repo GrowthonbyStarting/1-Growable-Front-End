@@ -6,7 +6,7 @@ const BtnGotoTeamlist = (): ReactElement => {
   const navigate: NavigateFunction = useNavigate();
 
   const gotoTeamList = (): void => {
-    navigate("/challenge");
+    window.location.href = "https://forms.gle/nchhpMcHUHJLvxAZ9";
   };
 
   return (
